@@ -14,6 +14,7 @@ This repository is the official implementation of our article, `Exploring Robust
 
 - [Overview](#overview)
 - [Repo Contents](#repo-contents)
+- [Code Setup](#code-setup)
 - [System Requirements](#system-requirements)
 - [Installation Guide](#installation-guide)
 - [Demo](#demo)
@@ -35,15 +36,15 @@ This work shows that the topological entropy and Olivier-Ricci curvature of the 
 **TLDR**: We explore neural networks for their robustness against adversarial attacks through the lens of graph theory. The graph theoretic tools successfully employed in network science (NetSci) have been used to quantify robustness of artificial neural networks (ANNs).
 
 <div align="center">
-        <img src="./deep_learning/docs/figs/overview.png" width="1100px" />
-        <p align="center"><b>Overview of our research.</b> Graph measures that have successfully quantified network robustness in NetSci domain (a), can also quantify robustness of Aritifical Neural Networks in Deep Learning domain (b).</p>
+        <img src="deep_learning/docs/figs/overview.png" width="1100px" />
+        <p align="center"><b>Overview.</b> Exploring robustness of deep artificial neural networks (DANNs) with graphtheoretic measures.</p>
 </div>
 
 ## Repo Contents
 
 The repository has two parts:
--	[Deep learning](deep_learning): `Deep learning code` for exploring the DANNs using [WS-flex](https://arxiv.org/abs/2007.06559) random graph generator.
--	[Graph theory](graph_theory): `Graph theory code` where graph theoretical properties of architectures of DANNs are calculated.
+- [Deep learning](deep_learning): `Deep learning code` for exploring the DANNs using [WS-flex](https://arxiv.org/abs/2007.06559) random graph generator.
+- [Graph theory](graph_theory): `Graph theory code` where graph theoretical properties of architectures of DANNs are calculated.	
 
 ## Code setup
 
@@ -118,12 +119,6 @@ bash launch_CNN_CIFAR10.sh cnn_cifar10 all 1
 bash launch_CNN_CIFAR100.sh cnn_cifar100 all 1
 bash launch-ResNet-TinyImageNet.sh resnet18_tinyimagenet all 1
 ```
-### 2 RandWire Networks
-
-Given in [randwire](randwire) directory. The repository is based upon the paper **[RandWire](https://arxiv.org/abs/1904.01569)** that implements neural networks using ER, BA, and WS graph generators. There are separate script files in the project directory for multiple runs of each of the graph type:
--	BA Model : [multi_runs_BA.sh](randwire/multi_runs_BA.sh)
--	ER Model : [multi_runs_ER.sh](randwire/multi_runs_ER.sh)
--	WS Model : [multi_runs_WS_1.sh](randwire/multi_runs_WS_1.sh), [multi_runs_WS_2.sh](randwire/multi_runs_WS_2.sh), [multi_runs_WS_3.sh](randwire/multi_runs_WS_3.sh), [multi_runs_WS_4.sh](randwire/multi_runs_WS_4.sh)
 
 **Requirements:**
 
