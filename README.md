@@ -15,12 +15,11 @@ This repository is the official implementation of our article, `Exploring Robust
 - [Overview](#overview)
 - [Repo Contents](#repo-contents)
 - [Code Setup](#code-setup)
-- [System Requirements](#system-requirements)
-- [Installation Guide](#installation-guide)
-- [Demo](#demo)
+- [Run the Code](#run-the-code)
 - [Results](#results)
+- [Plots](#plots)
 - [License](./LICENSE)
-- [Issues](https://github.com/ebridge2/lol/issues)
+- [Issues](?)
 - [Citation](#citation)
 
 ## Overview
