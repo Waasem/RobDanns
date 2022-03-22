@@ -50,39 +50,37 @@ The repository has two parts:
 
 ### 1 Deep Learing Domain
 
-
-
 **Requirements:**
 
 - NVIDIA GPU, Linux, Python3
-- PyTorch, various Python packages; Instructions for installing these dependencies are found below
+- PyTorch, Python packages with installation instrcutions found below.
 
 **Python environment:**
-We recommend using Conda or virtualenv package manager
+Use Conda or virtualenv package manager
 
 ```bash
-conda create -n graph2robnn python=3.6
-conda activate graph2robnn
+conda create -n RobDanns python=3.6
+conda activate RobDanns
 ```
 
 **Pytorch:**
-Manually install [PyTorch](https://pytorch.org/) with **CUDA** support (CPU version is not supported). 
-We have verified under PyTorch 1.4.0 and torchvision 0.5.0. For example:
+Install [PyTorch](https://pytorch.org/) with **CUDA** support (CPU version is not supported). The code has been verified with PyTorch 1.4.0 and torchvision 0.5.0.
+
 ```bash
-pip install torch==1.4.0 torchvision==0.5.0 torchattacks==2.6
+pip install torch==1.4.0 torchvision==0.5.0 torchattacks==3.2.1
 ``` 
 
-**Clone graph2robnn repository and install:**
+**Clone RobDanns repository and install:**
 
 ```bash
-git clone https://github.com/Waasem/Exploring-Robustness-of-NNs-through-Graph-Measures.git
-cd Exploring-Robustness-of-NNs-through-Graph-Measures/wsflex
+git clone https://github.com/Waasem/RobDanns.git
+cd RobDanns/deep_learning
 pip install -r requirements.txt
 python setup.py develop
 ```
 **Download datasets:**
 
-Download [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html) and/or [CIFAR-100 dataset](https://www.cs.toronto.edu/~kriz/cifar.html) and/or [TinyImageNet dataset]( http://cs231n.stanford.edu/tiny-imagenet-200.zip).
+Download [`CIFAR-10` dataset](https://www.cs.toronto.edu/~kriz/cifar.html), [CIFAR-100 dataset](https://www.cs.toronto.edu/~kriz/cifar.html), [TinyImageNet dataset]( http://cs231n.stanford.edu/tiny-imagenet-200.zip), [ImageNet dataset]( http://cs231n.stanford.edu/tiny-imagenet-200.zip)
 Uncompress the datasets then link the datasets with our code base. We have already downloaded the TinyImageNet dataset in the [wsflex/pycls/datasets/data/ tinyimagenet200](wsflex/pycls/datasets/data/ tinyimagenet200) directory. For the rest of the datasets, use following commands.
 
 ```bash
