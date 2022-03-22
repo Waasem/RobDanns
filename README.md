@@ -80,25 +80,36 @@ python setup.py develop
 ```
 **Download datasets:**
 
-Download [`CIFAR-10` dataset](https://www.cs.toronto.edu/~kriz/cifar.html), [CIFAR-100 dataset](https://www.cs.toronto.edu/~kriz/cifar.html), [TinyImageNet dataset]( http://cs231n.stanford.edu/tiny-imagenet-200.zip), [ImageNet dataset]( http://cs231n.stanford.edu/tiny-imagenet-200.zip)
-Uncompress the datasets then link the datasets with our code base. We have already downloaded the TinyImageNet dataset in the [wsflex/pycls/datasets/data/ tinyimagenet200](wsflex/pycls/datasets/data/ tinyimagenet200) directory. For the rest of the datasets, use following commands.
+Download [`CIFAR-10 dataset`](https://www.cs.toronto.edu/~kriz/cifar.html), [`CIFAR-100 dataset`](https://www.cs.toronto.edu/~kriz/cifar.html), [`TinyImageNet dataset`](http://cs231n.stanford.edu/tiny-imagenet-200.zip), [`ImageNet dataset`](https://image-net.org/download)
+Uncompress the datasets then link the datasets with our code using following commands.
 
 ```bash
 # CIFAR-10
 mkdir -p pycls/datasets/data
-wget https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz # or other data directory 
+wget https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
 tar -xvf cifar-10-python.tar.gz
 DIR=$(readlink -f cifar-10-batches-py)
 ln -s $DIR pycls/datasets/data/cifar10 # symlink
+
 # CIFAR-100 (optional)
 mkdir -p pycls/datasets/data
-wget https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz # or other data directory 
+wget https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz
 tar -xvf cifar-100-python.tar.gz
 DIR=$(readlink -f cifar-100-python)
 ln -s $DIR pycls/datasets/data/cifar100 # symlink
+
 # TinyImageNet (optional)
-ln -s path/tinyimagenet200 pycls/datasets/data/tinyimagenet200 # symlink
+mkdir -p pycls/datasets/data
+wget http://cs231n.stanford.edu/tiny-imagenet-200.zip
+# unzip and link the directory 
+ln -s <path to tinyimagenet200> pycls/datasets/data/tinyimagenet200 # symlink
+
+# ImageNet (optional)
+mkdir -p pycls/datasets/data/imagenet
+# Then download ImageNet following their official website
+ln -s <path to ImageNet> pycls/datasets/data/imagenet # symlink
 ```
+The expected dataset structures are explained in [DATA.md](./deep_learning/docs/DATA.md) file.
 
 ## Run the code
 
