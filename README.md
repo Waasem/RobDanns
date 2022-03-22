@@ -19,7 +19,7 @@ This repository is the official implementation of our article, `Exploring Robust
 - [Results](#results)
 - [Plots](#plots)
 - [License](./LICENSE)
-- [Issues](?)
+- [Issues](https://github.com/Waasem/RobDanns/pulls)
 - [Citation](#citation)
 
 ## Overview
@@ -149,6 +149,8 @@ The plots reported in our paper are located in the directory [plots](plots).
 -	CIFAR-10 Plots: For this dataset, the reported plots can be found in the notebook [Cifar-10_plots](plots/cifar-10/Cifar-10_results_reported.ipynb).
 -	CIFAR-100 Plots: For this dataset, the reported plots can be found in the notebook [Cifar-100_plots](plots/cifar-100/Cifar-100_results_reported.ipynb).
 -	Tiny ImageNet-200 Plots: For this dataset, the reported plots can be found in the notebook [Tiny-ImagetNet-200_plots](plots/tiny-imagenet-200/TinyImageNet_results_reported.ipynb).
+
+## Citation
 
 ## Thank You !
 
