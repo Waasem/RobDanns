@@ -101,12 +101,12 @@ ln -s $DIR pycls/datasets/data/cifar100 # symlink
 mkdir -p pycls/datasets/data
 wget http://cs231n.stanford.edu/tiny-imagenet-200.zip
 # unzip and link the directory 
-ln -s <path to tinyimagenet200> pycls/datasets/data/tinyimagenet200 # symlink
+ln -s (path to tinyimagenet200) pycls/datasets/data/tinyimagenet200 # symlink
 
 # ImageNet (optional)
 mkdir -p pycls/datasets/data/imagenet
 # Then download ImageNet following their official website
-ln -s <path to ImageNet> pycls/datasets/data/imagenet # symlink
+ln -s (path to ImageNet) pycls/datasets/data/imagenet # symlink
 ```
 The expected dataset structures are explained in [DATA.md](./deep_learning/docs/DATA.md) file.
 
