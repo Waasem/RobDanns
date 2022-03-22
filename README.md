@@ -113,43 +113,25 @@ The expected dataset structures are explained in [DATA.md](./deep_learning/docs/
 
 ## Run the code
 
-A clean repo for reproducing multiple experimental setups related to WS-flex models in our paper is provided here.
-We have made all the raw experimental configs related to Cifar-10 and Cifar-100 datasets available in [wsflex/configs/baselines/](wsflex/configs/baselines) directory. For individual experiments on TinyImageNet, the config.yaml files in each sub-directory of [results/training-outputs/wsflex/resnet18_tinyimagenet/](results/training-outputs/wsflex/resnet18_tinyimagenet/) can be used as training configuration. The results for these results are available in [results/training-outputs/wsflex](results/training-outputs/wsflex), . Therefore, you may directly skip this step to play with these results.
+A clean repo for reproducing multiple experimental setups related to deep learning code is provided here.
+The raw experimental configs related to all datasets available in [deep_learning/configs/baselines/](deep_learning/configs/baselines/) directory. For individual experiments, the .yaml files in each sub-directory of [deep_learning/configs/baselines/](deep_learning/configs/baselines/) can be used as training configuration.
 
 ###  Run the model for training
 Running the models training through following commands
+
 ```bash
 # Explaining the arguments:
-# Tasks: mlp_cifar10, cnn_ cifar10, cnn_cifar100, resnet18_tinyimagenet
+# Tasks: mlp_cifar10, cnn_ cifar10, cnn_cifar100, resnet18_tinyimagenet, resnet18_tinyimagenet
 # Division: all
 # GPU: 1
-bash launch_MLP_CIFAR10.sh mlp_cifar10 all 1
-bash launch_CNN_CIFAR10.sh cnn_cifar10 all 1
-bash launch_CNN_CIFAR100.sh cnn_cifar100 all 1
-bash launch-ResNet-TinyImageNet.sh resnet18_tinyimagenet all 1
+bash launch.sh mlp_cifar10 all 1
+bash launch.sh cnn_cifar10 all 1
+bash launch.sh cnn_cifar100 all 1
+bash launch.sh resnet18_tinyimagenet all 1
+bash launch-tinyimagenet.sh resnet18_tinyimagenet all 1
 ```
 
-**Requirements:**
-
-We recommend using Conda or virtualenv package manager
-
-```bash
-conda create -n randwire python=3.8
-conda activate randwire
-```
-
-**Pytorch:**
-Manually install [PyTorch](https://pytorch.org/) with **CUDA** support.
-
-**Clone graph2robnn repository and install:**
-
-```bash
-git clone https://github.com/Waasem/Exploring-Robustness-of-NNs-through-Graph-Measures.git
-cd Exploring-Robustness-of-NNs-through-Graph-Measures/randwire
-pip install -r requirements.txt
-```
-
-### 3 Graph Calculations
+### 2 Graph Calculations
 Given in [graphcalcs](graphcalcs) directory. This directory is based on Matlab. Here we calculate the graph measures of our neural networks. We recommend using [Matlab R_2020a]( https://www.mathworks.com/products/new_products/release2020a.html).  Because of the large number of experiments and huge space requirements for files containing the Adjacency Matrices, we have not uploaded these files. However, here we present a method to find the adjacency matrices of the graphs.
 
 **Code Setup:**
