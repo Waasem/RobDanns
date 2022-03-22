@@ -5,6 +5,7 @@
 [![Matlab](https://img.shields.io/badge/MATLAB-R2020a-green)](https://www.mathworks.com/products/new_products/release2020a.html)
 [![DOI](https://img.shields.io/badge/DOI-%3Cpending%3E-red)]()
 [![Predecessor](https://img.shields.io/badge/Predecessor-graph2nn-yellow)](https://github.com/facebookresearch/graph2nn)
+[![Pycls](https://img.shields.io/badge/pycls-FAIR-orange)](https://github.com/facebookresearch/pycls)
 
 
 This repository is the official implementation of our article, `Exploring Robust Architectures for Deep Artificial Neural Networks`, under review at Nature Machine Intelligence. 
@@ -33,21 +34,16 @@ This work shows that the topological entropy and Olivier-Ricci curvature of the 
 
 **TLDR**: We explore neural networks for their robustness against adversarial attacks through the lens of graph theory. The graph theoretic tools successfully employed in network science (NetSci) have been used to quantify robustness of artificial neural networks (ANNs).
 
+<div align="center">
+        <img src="./deep_learning/docs/figs/overview.png" width="1100px" />
+        <p align="center"><b>Overview of our research.</b> Graph measures that have successfully quantified network robustness in NetSci domain (a), can also quantify robustness of Aritifical Neural Networks in Deep Learning domain (b).</p>
+</div>
+
 ## Repo Contents
 
 The repository has two parts:
 -	[Deep learning](deep_learning): `Deep learning code` for exploring the DANNs using [WS-flex](https://arxiv.org/abs/2007.06559) random graph generator.
--	Graph domain where graph theoretical properties are calculated.
-
-
-## Research Methodology
-
-Graph theory has long been used in NetSci to study various real-world networks using graph-theoretic measures. For example, biological systems such as brain networks, economic systems such as financial networks, and social systems such as social networks. The graph measures include path length, graph connectivity, efficiency, degree measures, clustering coefficient, and many more. The graph spectral analysis may include graph curvature and entropy using the graph Adjacency and/or Laplacian matrices. In our setting, the architectures of ANNs are represented by graphs based on the three classical families of random graph models, Watts-Strogatz (WS), Erdo ̋s Rényi (ER), and Barabási-Albert (BA). Given these graph representations of the architectures of ANNs, we can study various graph-theoretic properties. We hypothesize that the graph properties quantifying the robustness of different networks in the NetSci domain, will provide us with the insight into the robustness of ANNs. We provide experimental evidence to support our hypothesis and present an algorithm that selects a robust ANN from the given design space without the need to search and train ANN based on the graphs from the entire design space exhaustively.
-
-<div align="center">
-        <img src="docs/Hypothesis.png" width="1100px" />
-        <p align="center"><b>Overview of our research.</b> Graph measures that have successfully quantified network robustness in NetSci domain (a), can also quantify robustness of Aritifical Neural Networks in Deep Learning domain (b).</p>
-</div>
+-	[Graph theory](graph_theory): `Graph theory code` where graph theoretical properties of architectures of DANNs are calculated.
 
 ## Code setup
 
