@@ -31,26 +31,26 @@ Deep artificial neural networks (DANNs) have varying predictive performance when
 - Transform the graphs to DANN architectures to train/validate/test on various image classification tasks.
 - Explore the relationship between the robustness of trained DANNs against noise and adversarial attacks and the robustness of their underlying architectures estimated via graph-theoretic measures.
 
-This work shows that the topological entropy and Olivier-Ricci curvature of the underlying graphs can quantify the robustness of DANNs. This relationship is stronger for complex tasks and large/deep DANNs. Our work offers a novel approach for autoML and neural architecture search community to quantify robustness of DANNs through graph curvature and entropy. We believe that this work will have a high impact on the acceptability of safety-critical AI applications.
+This work shows that the topological entropy and Olivier-Ricci curvature of the underlying graphs can quantify the robustness of DANNs. This relationship is stronger for complex tasks and large/deep DANNs. Our work offers a novel approach for autoML and neural architecture search community to quantify robustness of DANNs through graph curvature and entropy. We believe that this work will have a high impact on the acceptability of safety-critical AI applications. Please refer to our paper for the details.
 
 **TLDR**: We explore neural networks for their robustness against adversarial attacks through the lens of graph theory. The graph theoretic tools successfully employed in network science (NetSci) have been used to quantify robustness of artificial neural networks (ANNs).
 
 <div align="center">
         <img src="deep_learning/docs/figs/overview.png" width="1100px" />
-        <p align="center"><b>Overview.</b> Exploring robustness of deep artificial neural networks (DANNs) with graphtheoretic measures.</p>
+        <p align="center"><b>Overview.</b> Exploring robustness of deep artificial neural networks (DANNs) with graph-theoretic measures.</p>
 </div>
 
 ## Repo Contents
 
 The repository has two parts:
-- [Deep learning](deep_learning): `Deep learning code` for exploring the DANNs using [WS-flex](https://arxiv.org/abs/2007.06559) random graph generator.
-- [Graph theory](graph_theory): `Graph theory code` where graph theoretical properties of architectures of DANNs are calculated.	
+- [`Deep learning`](deep_learning): `Deep learning code` for exploring the DANNs using [WS-flex](https://arxiv.org/abs/2007.06559) random graph generator. The directory itself is a modified version of **[graph2nn]( https://github.com/facebookresearch/graph2nn)** linked to the paper [Graph Structure of Neural Networks](https://arxiv.org/abs/2007.06559). The code is built upon **[pycls](https://github.com/facebookresearch/pycls)**, an image classification codebase built by FAIR.
+- [`Graph theory`](graph_theory): `Graph theory code` where graph theoretical properties of architectures of DANNs are calculated. We use [MATLAB-R2020a](https://www.mathworks.com/products/new_products/release2020a.html) to carryout calculations in the graph theory and network science domain.
 
 ## Code setup
 
-### 1 WS-flex / Relational Graphs
+### 1 Deep Learing Domain
 
-Given in [wsflex](wsflex) directory. The repository is heavily built upon **[pycls](https://github.com/facebookresearch/pycls)**, an image classification codebase built by FAIR. The repo itself is a modified version of **[graph2nn]( https://github.com/facebookresearch/graph2nn)** linked to the paper [Graph Structure of Neural Networks](https://arxiv.org/abs/2007.06559).
+
 
 **Requirements:**
 
