@@ -1,5 +1,3 @@
-# Under construction site, shall be updated shortly for the Nature Machine Intelligence article submission.
-
 # RobDanns
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.4.0-blue)](https://pytorch.org/get-started/previous-versions/#v140)
 [![Matlab](https://img.shields.io/badge/MATLAB-R2020a-green)](https://www.mathworks.com/products/new_products/release2020a.html)
