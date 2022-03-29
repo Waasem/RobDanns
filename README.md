@@ -16,8 +16,7 @@ This repository is the official implementation of our article, `Exploring Robust
 - [Repo Contents](#repo-contents)
 - [Code Setup](#code-setup)
 - [Run the Code](#run-the-code)
-- [Results](#results)
-- [Plots](#plots)
+- [Plots](#plots-for-results)
 - [License](./LICENSE)
 - [Issues](https://github.com/Waasem/RobDanns/pulls)
 - [Citation](#citation)
@@ -123,6 +122,7 @@ Running the models training through following commands
 # Tasks: mlp_cifar10, cnn_ cifar10, cnn_cifar100, resnet18_tinyimagenet, resnet18_tinyimagenet
 # Division: all
 # GPU: 1
+cd RobDanns/deep_learning
 bash launch.sh mlp_cifar10 all 1
 bash launch.sh cnn_cifar10 all 1
 bash launch.sh cnn_cifar100 all 1
@@ -131,24 +131,20 @@ bash launch-tinyimagenet.sh resnet18_tinyimagenet all 1
 ```
 
 ### 2 Graph Calculations
-Given in [graphcalcs](graphcalcs) directory. This directory is based on Matlab. Here we calculate the graph measures of our neural networks. We recommend using [Matlab R_2020a]( https://www.mathworks.com/products/new_products/release2020a.html).  Because of the large number of experiments and huge space requirements for files containing the Adjacency Matrices, we have not uploaded these files. However, here we present a method to find the adjacency matrices of the graphs.
+Given in [Graph Theory](graph_theory) directory. The code in this directory is based on Matlab. Here we calculate the graph measures of our neural networks. We recommend using [Matlab R_2020a]( https://www.mathworks.com/products/new_products/release2020a.html).  Because of the large number of experiments and huge space requirements for files containing the Adjacency Matrices (~100GB), we have not uploaded these files. However, here we present a method to find the adjacency matrices of the graphs and how to perform the graph-theoretical analysis on the generated graphs, as given below:
 
 **Code Setup:**
-Before running this code part, we need to find and store the Adjacency Matrices of our graphs. For the Relational Graphs, we have placed a notebook file [generate_graphs.ipynb](wsflex/analysis/generate_graphs.ipynb) that saves the Adjacency matrices for all of our WS-flex graphs. For other graphs, similar methodology can be followed.
+Before running this code part, we need to find and store the Adjacency Matrices of graphs of architectures of our DANNs. We have placed a notebook file [generate_graphs.ipynb](deep_learning/analysis/generate_graphs.ipynb) in the [`Deep learning/analysis`](deep_learning/analysis) directory. This notebook can be used to generate Adjacency Matrices for our Relational Graphs experiments. In our experiments, we generate 2.313 Million WS-flex graphs, sub-sample them through coarse bins to 3854, 441, and 54 graphs. These sub-sampled graphs along with the corresponding Adjacency Matrices can be save for analysis in the graph theory domain. Similar methodology can be followed to generate and save graphs from any random graph genrators.
 
 Once we have Adjacency Matrices of our graphs, we can feed them as input to the file [
-main.m](graphcalcs/main.m). For each of the graph models, users can comment / uncomment the code blocks in this file and run the code. Note: this can be time consuming process.
+main.m](graphcalcs/main.m). For each of the graph models, users can comment / uncomment the code blocks in this file and run the code. The resulting .mat file would contain the Adjacency matrix, degree, clustering coefficient, average path length, characteristic path length, global efficiency, algebraic connectivity, entropy, and curvature. Note: this can be a time consuming process.
 
-## Results
+## Plots for results
 
-All results of our experiments are placed in the directory [results](results/training-outputs/). Users can view the training results of each category of neural networks in this directory for reference.
-
-## Plots
-
-The plots reported in our paper are located in the directory [plots](plots).
--	CIFAR-10 Plots: For this dataset, the reported plots can be found in the notebook [Cifar-10_plots](plots/cifar-10/Cifar-10_results_reported.ipynb).
--	CIFAR-100 Plots: For this dataset, the reported plots can be found in the notebook [Cifar-100_plots](plots/cifar-100/Cifar-100_results_reported.ipynb).
--	Tiny ImageNet-200 Plots: For this dataset, the reported plots can be found in the notebook [Tiny-ImagetNet-200_plots](plots/tiny-imagenet-200/TinyImageNet_results_reported.ipynb).
+The plots for our experimental results reported in our main paper as well as the supplementary section are located in the directory [figs](deep_learning/docs/figs). The statistical analysis results reported herein were performed in the Microsoft Excel's Data Analaysis toolbox.
+-	Accuracy Plots for all Experiments: The predictive accuracy (in %) plots of all DANNs on respective datasets are compiled in [Accuracy Results](deep_learning/docs/figs/accuracy_results_all.png) file.
+-	Robustness Plots for all Experiments: Graph entropy values for structures of DANNs and their corresponding predictive performance under various types and levels of insults are given in the figures for each dataset ([ImageNet](deep_learning/docs/figs/corr_acc_ent_Res18_ImageNet.png), [Tiny-ImageNet](deep_learning/docs/figs/corr_acc_ent_Res18_TinyImageNet.png), and [CIFAR](corr_acc_ent_CNN_Cifar100_Cifar10.png)). Results from additional simulations are given in the [Supplementary Figs](deep_learning/docs/figs/supplementary_figs) directory.
+-	Task and Model Complexity Plots: The effect of graph entropy on DANNs having varying depth as well on tasks having varying complexity is given in the figure [Complexity Plots](deep_learning/docs/figs/task_model_complexity_plots.png). One can notice that as the complexity of the model and/or dataset increases, the importance of entropy as the robustness-measure of DANNs increases significantly.
 
 ## Citation
 
