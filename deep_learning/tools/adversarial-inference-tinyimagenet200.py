@@ -267,7 +267,9 @@ def train_model(writer_train=None, writer_eval=None, is_master=False):
         elif cfg.TRAIN.DATASET == 'tinyimagenet200':
             pre_repeat = 9
             if cfg.MODEL.TYPE == 'resnet':
-                if 'basic' in cfg.RESNET.TRANS_FUN:  # ResNet34
+                if 'basic' in cfg.RESNET.TRANS_FUN and cfg.MODEL.DEPTH == 18:  # ResNet18
+                    stats_baseline = 1820000000
+                elif 'basic' in cfg.RESNET.TRANS_FUN and cfg.MODEL.DEPTH == 34:  # ResNet34
                     stats_baseline = 3663761408
                 elif 'sep' in cfg.RESNET.TRANS_FUN:  # ResNet34-sep
                     stats_baseline = 553614592
@@ -365,7 +367,7 @@ def train_model(writer_train=None, writer_eval=None, is_master=False):
     traindir = os.path.join(data_path, cfg.TRAIN.SPLIT)
     valdir = os.path.join(data_path, cfg.TEST.SPLIT, 'images')
     valgtfile = os.path.join(data_path, cfg.TEST.SPLIT, 'val_annotations.txt')    
-    normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    # normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 
     # create training dataset and loader
     train_loader = torch.utils.data.DataLoader(
@@ -457,7 +459,7 @@ def train_model(writer_train=None, writer_eval=None, is_master=False):
             atk = torchattacks.PGD(net, eps=1/510, alpha=2/225, steps=7) # for relevant dataset, use parameters from torchattacks official notebook
         elif epsilon == 1:
             print("Running CW Attack")
-            atk = torchattacks.CW(net, c=0.1, kappa=0, steps=100, lr=0.01)
+            atk = torchattacks.CW(net, c=0.1, kappa=0, steps=100, lr=0.01) # choose suitable values for c, kappa, steps, and lr.
         else:
             print("Running FGSM Attacks on epsilon :", epsilon)
             atk = torchattacks.FGSM(net, eps=epsilon)
