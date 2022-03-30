@@ -13,7 +13,6 @@ This repository is the official implementation of our article, `Exploring Robust
 - [Overview](#overview)
 - [Repo Contents](#repo-contents)
 - [Code Setup](#code-setup)
-- [Run the Code](#run-the-code)
 - [Plots](#plots-for-results)
 - [License](./LICENSE)
 - [Issues](https://github.com/Waasem/RobDanns/pulls)
@@ -107,13 +106,14 @@ ln -s (path to ImageNet) pycls/datasets/data/imagenet # symlink
 ```
 The expected dataset structures are explained in [DATA.md](./deep_learning/docs/DATA.md) file.
 
-## Run the code
+**Run the code:**
 
 A clean repo for reproducing multiple experimental setups related to deep learning code is provided here.
 The raw experimental configs related to all datasets available in [deep_learning/configs/baselines/](deep_learning/configs/baselines/) directory. For individual experiments, the .yaml files in each sub-directory of [deep_learning/configs/baselines/](deep_learning/configs/baselines/) can be used as training configuration.
 
-###  Run the model for training
-Running the models training through following commands
+**Run the model for training:**
+
+Train your DANN models through following commands.
 
 ```bash
 # Explaining the arguments:
@@ -131,11 +131,13 @@ bash launch-tinyimagenet.sh resnet18_tinyimagenet all 1
 ### 2 Graph Calculations
 Given in the [Graph theory](graph_theory) directory. The code in this directory is based on MATLAB. Here we calculate the graph measures of our DANNs. We recommend using [Matlab R_2020a]( https://www.mathworks.com/products/new_products/release2020a.html).  Because of the large number of experiments and huge space requirements for files containing the Adjacency Matrices (~100GB), we have not uploaded these files. However, here we present a method to find the adjacency matrices of the graphs and the code to perform the graph-theoretical analysis on the generated graphs, as given below:
 
-**Code Setup:**
+**Code setup:**
+
 Before running this code part, we need to find and store the Adjacency Matrices of graphs of architectures of our DANNs. We have placed a notebook file [generate_graphs.ipynb](deep_learning/analysis/generate_graphs.ipynb) in the [`Deep learning/analysis`](deep_learning/analysis) directory. This notebook can be used to generate Adjacency Matrices for our Relational Graphs experiments. In our experiments, we generate 2.313 Million WS-flex graphs, sub-sample them through coarse bins to 3854, 441, and 54 graphs. These sub-sampled graphs along with the corresponding Adjacency Matrices can be saved for analysis in the graph theory domain. Similar methodology can be followed to generate and save graphs from any random graph generator.
 
-Once we have Adjacency Matrices of our graphs, we can feed them as input to the file [
-main.m](graph_theory/main.m). For each of the graph models, users can comment / uncomment the code blocks in this file and run the code. The resulting .mat file would contain the Adjacency matrix, degree, clustering coefficient, average path length, characteristic path length, global efficiency, algebraic connectivity, entropy, and curvature. Note: this can be a time consuming process.
+**Calculate graph-theoretic measures:**
+
+Once we have Adjacency Matrices of our graphs, we can feed them as input to the file [main.m](graph_theory/main.m). For each of the graph models, users can comment / uncomment the code blocks in this file and run the code. The resulting .mat file would contain the Adjacency matrix, degree, clustering coefficient, average path length, characteristic path length, global efficiency, algebraic connectivity, entropy, and curvature. Note: this can be a time consuming process.
 
 ## Plots for results
 
