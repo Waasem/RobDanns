@@ -135,7 +135,7 @@ Given in the [Graph theory](graph_theory) directory. The code in this directory 
 Before running this code part, we need to find and store the Adjacency Matrices of graphs of architectures of our DANNs. We have placed a notebook file [generate_graphs.ipynb](deep_learning/analysis/generate_graphs.ipynb) in the [`Deep learning/analysis`](deep_learning/analysis) directory. This notebook can be used to generate Adjacency Matrices for our Relational Graphs experiments. In our experiments, we generate 2.313 Million WS-flex graphs, sub-sample them through coarse bins to 3854, 441, and 54 graphs. These sub-sampled graphs along with the corresponding Adjacency Matrices can be saved for analysis in the graph theory domain. Similar methodology can be followed to generate and save graphs from any random graph generator.
 
 Once we have Adjacency Matrices of our graphs, we can feed them as input to the file [
-main.m](graphcalcs/main.m). For each of the graph models, users can comment / uncomment the code blocks in this file and run the code. The resulting .mat file would contain the Adjacency matrix, degree, clustering coefficient, average path length, characteristic path length, global efficiency, algebraic connectivity, entropy, and curvature. Note: this can be a time consuming process.
+main.m](graph_theory/main.m). For each of the graph models, users can comment / uncomment the code blocks in this file and run the code. The resulting .mat file would contain the Adjacency matrix, degree, clustering coefficient, average path length, characteristic path length, global efficiency, algebraic connectivity, entropy, and curvature. Note: this can be a time consuming process.
 
 ## Plots for results
 
