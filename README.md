@@ -1,7 +1,7 @@
 # RobDanns
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.4.0-blue)](https://pytorch.org/get-started/previous-versions/#v140)
 [![Matlab](https://img.shields.io/badge/MATLAB-R2020a-green)](https://www.mathworks.com/products/new_products/release2020a.html)
-[![DOI](https://img.shields.io/badge/DOI-%3Cpending%3E-red)](https://doi.org/10.48550/arXiv.2106.15850)
+[![DOI](https://img.shields.io/badge/DOI-arXiv-red)](https://doi.org/10.48550/arXiv.2106.15850)
 [![Predecessor](https://img.shields.io/badge/Predecessor-graph2nn-yellow)](https://github.com/facebookresearch/graph2nn)
 [![Pycls](https://img.shields.io/badge/pycls-FAIR-orange)](https://github.com/facebookresearch/pycls)
 
