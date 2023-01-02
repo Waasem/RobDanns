@@ -6,7 +6,7 @@
 [![Pycls](https://img.shields.io/badge/pycls-FAIR-orange)](https://github.com/facebookresearch/pycls)
 
 
-This repository is the official implementation of our article, [`Exploring robust architectures for deep artificial neural networks`]([https://doi.org/10.48550/arXiv.2106.15850](https://doi.org/10.1038/s44172-022-00043-2)), published at [Nature Communications Engineering](https://www.nature.com/commseng/) on 17 December 2022.
+This repository is the official implementation of our article, [`Exploring robust architectures for deep artificial neural networks`](https://doi.org/10.48550/arXiv.2106.15850](https://doi.org/10.1038/s44172-022-00043-2), published at [Nature Communications Engineering](https://www.nature.com/commseng/) on 17 December 2022.
 
 ## Contents
 
